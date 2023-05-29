@@ -1,17 +1,60 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Relatórios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Total de Senhas Geradas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h3>{{ totalSenhasGeradas }}</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Geradas por Tipo</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let tipo of senhasGeradasPorTipo | keyvalue">
+          {{ tipo.key }}: {{ tipo.value }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Atendidas</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <h3>{{ senhasAtendidas }}</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Senhas Não Atendidas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h3>{{ senhasNaoAtendidas }}</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-button color="danger" (click)="apagarDados()">Apagar Todos os Dados</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

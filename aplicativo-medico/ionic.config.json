@@ -1,7 +1,10 @@
 {
-  "name": "Aplicativo Médico",
+  "name": "prototipo-beta",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }
