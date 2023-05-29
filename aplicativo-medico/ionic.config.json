@@ -1,0 +1,7 @@
+{
+  "name": "Aplicativo Médico",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
